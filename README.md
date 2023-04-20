@@ -25,7 +25,7 @@
 - Eliminar usuarios: Recibe el id del usuario a eliminar en la URL de la API
 - Asignar guía: Recibe como parametros:
     - nameGuide = alfanumerico
-    - idDelivery = debe ser un id de un usuario registrado valido cuyo rol sea 1(mensajero).
+    - iddelivery = debe ser un id de un usuario registrado valido cuyo rol sea 1(mensajero).
 - Eliminar guias asignadas: No recibe parametros, al hacer un request elimina todas las guias creadas.
 - Exportar guias: Se debe ejecutar como send and download para que pueda descargar el archivo. Debido a limitaciones de Postman no se puede indicar previamente la extensión del archivo a descargar por lo que en el momneto que salga el explorador de archivos con el nombre de la guía se debe agregar la extensión .xlsx.
 - VehiculoMasUsado: Devolvera el nombre del vehículo más usado por los nmensajeros, igulamente devolverá el número de veces usado.
