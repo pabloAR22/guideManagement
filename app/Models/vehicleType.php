@@ -5,20 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class vehicleType extends Model
 {
     use HasFactory;
 
-    protected $table = "roles";
+    protected $table = "vehicle_types";
 
     protected $fillable = [
-        'rolName',
+        "name",
         'created_at',
         'updated_at'
     ];
-
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
 }

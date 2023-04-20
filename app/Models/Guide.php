@@ -10,7 +10,7 @@ class Guide extends Model
     use HasFactory;
     protected $fillable = [
         'nameGuide',
-        'idDelivery'
+        'iddelivery'
     ];
 
     public function user()

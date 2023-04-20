@@ -6,10 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Vehicle;
-use App\Models\Rol;
-use Illuminate\support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -162,5 +159,16 @@ class userController extends Controller
         return response()->json([
             "result" => "El usuario fue eliminado"
         ], Response::HTTP_OK);
+    }
+
+    public function mostUsedVehicle(){
+        $v = DB::table('vehicles')
+                ->join('vehicle_types', 'vehicles.type', '=', 'vehicle_types.id')
+                ->select('vehicle_types.name', DB::raw('COUNT(type) AS total_tipo_vehiculos'))
+                ->groupBy('vehicle_types.name')
+                ->orderBy('total_tipo_vehiculos', 'desc')
+                ->limit(1)
+                ->get();
+        return($v);
     }
 }
