@@ -1,6 +1,7 @@
 # guideManagement
 - Primero se debe clonar el repositorio, luego de clonarlo hacer un git checkout master.
-- Se debe cambiar el .env para editar los parametros de conexión a DB.
+- Se debe cambiar el .env para editar los parametros de conexión a DB
+- Se deben correr las migraciones
 - Se debe correr el comando php artisan db:seed. Este creará:
     - 2 roles: Mensajero = id 1, Administrador = id 2
     - 1 usuario , Celular = 350471, password = password.
