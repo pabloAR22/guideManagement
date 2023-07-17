@@ -21,13 +21,22 @@ use App\Http\Controllers\Api\guideController;
 Route::post('login', [authController::class, 'login']);
 Route::post('prueba', [userController::class, 'vehiclesXDelivery']);
 
-Route::group(['middleware' => ['auth:sanctum']], function(){
-    Route::resource('users', userController::class)
-        ->only(['index', 'show', 'store', 'update', 'destroy']);
-    Route::post('assignGuide', [guideController::class, 'assignGuide']);
-    Route::post('deleteGuides', [guideController::class, 'deleteAllGuides']);
-    Route::post('logout', [authController::class, 'logout']);
-    Route::get('exportGuides', [guideController::class, 'createFile']);
-    Route::get('vehiculoMasUsado', [userController::class, 'mostUsedVehicle']);
-    Route::get('guiasTotales', [guideController::class, 'deliveryWithMostGuides']);
-});
+Route::resource('users', userController::class)
+->only(['index', 'show', 'store', 'update', 'destroy']);
+Route::post('assignGuide', [guideController::class, 'assignGuide']);
+Route::post('deleteGuides', [guideController::class, 'deleteAllGuides']);
+Route::post('logout', [authController::class, 'logout']);
+Route::get('exportGuides', [guideController::class, 'createFile']);
+Route::get('vehiculoMasUsado', [userController::class, 'mostUsedVehicle']);
+Route::get('guiasTotales', [guideController::class, 'deliveryWithMostGuides']);
+
+// Route::group(['middleware' => ['auth:sanctum']], function(){
+//     Route::resource('users', userController::class)
+//         ->only(['index', 'show', 'store', 'update', 'destroy']);
+//     Route::post('assignGuide', [guideController::class, 'assignGuide']);
+//     Route::post('deleteGuides', [guideController::class, 'deleteAllGuides']);
+//     Route::post('logout', [authController::class, 'logout']);
+//     Route::get('exportGuides', [guideController::class, 'createFile']);
+//     Route::get('vehiculoMasUsado', [userController::class, 'mostUsedVehicle']);
+//     Route::get('guiasTotales', [guideController::class, 'deliveryWithMostGuides']);
+// });
